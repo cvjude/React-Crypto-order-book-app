@@ -1,5 +1,11 @@
+@mixin smallDesktop {
+  @media (max-width: #{1500px}) {
+    @content
+  }
+}
+
 @mixin smallerDesktop {
-  @media (max-width: #{1399px}) {
+  @media (max-width: #{1330px}) {
     @content
   }
 }
@@ -24,7 +30,11 @@
     height: 90%;
     box-shadow: 0px 6px 4px -4px rgba(0, 0, 0, 0.7);
     padding: 15x 20px;
-    @include smallerDesktop {
+    @include smallDesktop {
+      width: 80%;
+    }
+
+    @include smallDesktop {
       width: 90%;
     }
 
