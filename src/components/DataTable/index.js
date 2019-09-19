@@ -10,9 +10,8 @@ export default function AsksTable({ data, title, description }) {
       </div>
     );
 
-  console.log(description.split('/'))
   const pairs = data.map((pair, index) => (
-    <div className="dataPair">
+    <div key={index} className="dataPair">
       <ul>
         <li>
           {index + 1}
