@@ -9,6 +9,7 @@ export default class DropDown extends Component {
 
   handleClick = (e, url_symbol, name) => {
     const { handleSubscription } = this.props;
+    console.log(e, e.target.innerHTML)
     const value = e.target.innerHTML;
     this.setState({
       presentValue: value,
@@ -24,10 +25,9 @@ export default class DropDown extends Component {
   }
 
   render() {
-    const { openDrop } = this.state;
+    const { openDrop, presentValue } = this.state;
     const { pairs } = this.props;
     if (pairs.length <= 0) return (<div>loading</div>);
-    const presentValue = pairs[0].description;
     const pair = pairs.map(pair => (
       <button type="button" key={pair.name} value={pair.description}
         onClick={
@@ -37,7 +37,7 @@ export default class DropDown extends Component {
     return (
       <div className="dropDown">
         <button className="currentValue" type="button" onClick={this.revileDropDown}>
-          {presentValue}
+          {presentValue ? presentValue : pairs[0].description}
         </button>
         {openDrop ?
           (<div className="dropDownButtons">

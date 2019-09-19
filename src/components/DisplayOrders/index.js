@@ -19,7 +19,6 @@ export default class DisplayOrders extends Component {
   async componentDidMount() {
     try {
       const response = await axois.get('https://www.bitstamp.net/api/v2/trading-pairs-info/');
-      console.log(response.data)
       this.setState({
         pairs: response.data,
         currentPair: response.data[0].url_symbol
