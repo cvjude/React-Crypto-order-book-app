@@ -1,16 +1,30 @@
+@mixin smallerTabs {
+  @media (max-width: #{850px}) {
+    @content
+  }
+}
+
 .orders{
   width: 100%;
   height: 100%;
   z-index: 2;
   padding: 30px;
+  overflow: scroll;
+
+  @include smallerTabs{
+    padding: 10px;
+    padding-top: 40px;
+  }
 
   .top-section {
     height: 40%;
     display: flex;
     flex-direction: column;
-    color: white;
     align-items: center;
-    justify-content: center;
+    color: white;
+    @include smallerTabs{
+      height: 25%;
+    }
 
     h2 {
       margin-bottom: 15px;
@@ -22,6 +36,14 @@
     display: flex;
     justify-content: space-between;
     height: 60%;
-    padding: 0 40px
+    overflow: scroll;
+    padding: 0 40px;
+
+    @include smallerTabs{
+      margin-top: 20px;
+      flex-direction: column;
+      align-items: center;
+      height: 75%;
+    }
   }
 }
