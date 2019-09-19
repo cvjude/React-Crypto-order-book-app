@@ -1,3 +1,15 @@
+@mixin mobile {
+  @media (max-width: #{550px}) {
+    @content
+  }
+}
+
+@mixin smallerTabs {
+  @media (max-width: #{850px}) {
+    @content
+  }
+}
+
 %shared {
   padding: 10px;
   border: none;
@@ -19,6 +31,10 @@
   border-radius: 5px;
   overflow: hidden;
   text-align: left;
+
+  @include mobile{
+    width: 300px;
+  }
 
   .currentValue {
     @extend %shared;
@@ -44,7 +60,7 @@
     flex-direction: column;
     height: 200px;
     overflow: auto;
-    z-index: 100;
+    z-index: 120;
 
     button {
       @extend %shared;

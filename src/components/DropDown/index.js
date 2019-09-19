@@ -9,7 +9,6 @@ export default class DropDown extends Component {
 
   handleClick = (e, url_symbol, name) => {
     const { handleSubscription } = this.props;
-    console.log(e, e.target.innerHTML)
     const value = e.target.innerHTML;
     this.setState({
       presentValue: value,

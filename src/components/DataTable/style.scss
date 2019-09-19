@@ -1,9 +1,42 @@
+@mixin tablet {
+  @media (max-width: #{1200px}) {
+    @content
+  }
+}
+
+@mixin smallerTabs {
+  @media (max-width: #{850px}) {
+    @content
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{550px}) {
+    @content
+  }
+}
+
 .data {
   position: relative;
   width: 450px;
   height: 400px;
   background: rgba($color: #ffffff, $alpha: 0.8);
   border-radius: 5px;
+
+  @include tablet{
+    width: 350px;
+  }
+
+  @include smallerTabs{
+    margin-bottom: 20px;
+    width: 450px;
+  }
+
+  @include mobile{
+    margin-bottom: 20px;
+    width: 300px;
+  }
+
 
   .dataHeader{
 
