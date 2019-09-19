@@ -1,0 +1,27 @@
+.orders{
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 30px;
+
+  .top-section {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      margin-bottom: 15px;
+      font-weight: 400;
+    }
+  }
+
+  .lowerSection {
+    display: flex;
+    justify-content: space-between;
+    height: 60%;
+    padding: 0 40px
+  }
+}
